@@ -8,7 +8,7 @@ left=$(echo "$left_b" | numfmt --to=iec)
 percentage=$(echo "scale=2; 100*$used_b/$space_b" | bc)
 exceed_b=$((used_b-space_b))
 exceed=$(echo "$exceed_b" | numfmt --to=iec)
-sorted=$(du -ha . * | sort -nr | head -n 100 | column -t -N SIZE,FILE)
+sorted=$(du -ha . * | sort -nr | head -n 100) #  | column -t -N SIZE,FILE
 
 echo "Total space limit:            $space"
 echo "Used:                         $used"
